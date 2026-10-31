@@ -1,0 +1,7 @@
+{
+  "command.pick": "Switch Project",
+  "command.addToClaude": "Add to Claude",
+  "command.openInBrowser": "Open in Browser",
+  "config.addRoot": "Folder that **Add folder…** looks in. When empty, the folder above the workspace file.",
+  "config.browser": "macOS app name that **Open in Browser** uses. When empty, the file opens in its default app (PDF → Preview). Other systems always use the default app."
+}

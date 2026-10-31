@@ -1,0 +1,7 @@
+{
+  "command.pick": "Proje Değiştir",
+  "command.addToClaude": "Claude'a ekle",
+  "command.openInBrowser": "Tarayıcıda aç",
+  "config.addRoot": "**Klasör ekle…** listesinin arandığı klasör. Boşsa workspace dosyasının bir üstü.",
+  "config.browser": "**Tarayıcıda aç**'ın kullandığı macOS uygulamasının adı. Boşsa dosya varsayılan uygulamasında açılır (PDF → Önizleme). Diğer sistemlerde hep varsayılan uygulama kullanılır."
+}

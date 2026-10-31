@@ -1,0 +1,119 @@
+{
+  "name": "tools",
+  "displayName": "Speys Tools",
+  "description": "Repo switcher for multi-root workspaces, add files to Claude Code, open HTML and PDF files in your browser.",
+  "publisher": "speys",
+  "version": "0.6.0",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speys-app/speys-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/speys-app/speys-vscode/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "repo switcher",
+    "multi-root",
+    "workspace",
+    "source control",
+    "claude"
+  ],
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "main": "./extension.js",
+  "l10n": "./l10n",
+  "extensionKind": [
+    "workspace"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "extensionDependencies": [
+    "vscode.git"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "package": "npx --yes @vscode/vsce package --no-dependencies --out speys-tools.vsix"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "speysTools.pick",
+        "title": "%command.pick%",
+        "category": "Speys Tools",
+        "icon": "$(repo)"
+      },
+      {
+        "command": "speysTools.addToClaude",
+        "title": "%command.addToClaude%",
+        "category": "Speys Tools",
+        "icon": "$(mention)"
+      },
+      {
+        "command": "speysTools.openInBrowser",
+        "title": "%command.openInBrowser%",
+        "category": "Speys Tools",
+        "icon": "$(globe)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "speysTools.addToClaude",
+          "when": "!explorerResourceIsFolder",
+          "group": "claude@1"
+        },
+        {
+          "command": "speysTools.openInBrowser",
+          "when": "!explorerResourceIsFolder && resourceExtname =~ /^\\.(html?|pdf)$/i",
+          "group": "navigation@99"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "speysTools.addToClaude",
+          "when": "editorIsOpen"
+        },
+        {
+          "command": "speysTools.openInBrowser",
+          "when": "resourceExtname =~ /^\\.(html?|pdf)$/i"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "speysTools.openInBrowser",
+          "when": "resourceExtname =~ /^\\.(html?|pdf)$/i",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Speys Tools",
+      "properties": {
+        "speysTools.addRoot": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.addRoot%"
+        },
+        "speysTools.browser": {
+          "type": "string",
+          "default": "Google Chrome",
+          "markdownDescription": "%config.browser%"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "speysTools.pick",
+        "mac": "cmd+e",
+        "key": "ctrl+alt+e"
+      }
+    ]
+  }
+}

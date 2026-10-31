@@ -1,0 +1,7 @@
+**/*.test.js
+.gitignore
+.vscodeignore
+CLAUDE.md
+CONTRIBUTING.md
+SECURITY.md
+*.local.md

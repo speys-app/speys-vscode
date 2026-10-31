@@ -1,0 +1,19 @@
+{
+  "Switch project · reorder · add / remove": "Proje değiştir · sırala · ekle / çıkar",
+  "Move up": "Yukarı taşı",
+  "Move down": "Aşağı taşı",
+  "Remove from workspace (files aren't deleted)": "Workspace'ten çıkar (dosyalar silinmez)",
+  "Which project?  ↑ ↓ reorder · ✕ remove": "Hangi projeye geçilsin?  ↑ ↓ sıra · ✕ çıkar",
+  "current": "şu an",
+  "in {0}": "{0} içinde",
+  "in {0} · current": "{0} içinde · şu an",
+  "Add folder…": "Klasör ekle…",
+  "Continue": "Devam",
+  "Changing the first folder makes VS Code restart every extension, Claude Code's session included. Continue?": "İlk klasör değişince VS Code tüm eklentileri yeniden başlatır (Claude Code oturumu da). Devam edilsin mi?",
+  "Choose another folder…": "Başka klasör seç…",
+  "Folders to add to the workspace (under {0})": "Workspace'e eklenecek klasörler ({0} altında)",
+  "Folders to add to the workspace": "Workspace'e eklenecek klasörler",
+  "Add to workspace": "Workspace'e ekle",
+  "Not added to Claude (a folder or not a text file): {0}": "Claude'a eklenmedi (klasör ya da metin olmayan dosya): {0}",
+  "Could not open {0}: {1}": "{0} açılamadı: {1}"
+}
