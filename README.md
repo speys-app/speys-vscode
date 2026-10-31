@@ -8,6 +8,19 @@ Small tools for working across many repos in VS Code, with Claude Code alongside
 
 No account, no network, no dependencies. From the makers of [Speys Local](https://github.com/speys-app/speys-local).
 
+## Install
+
+It isn't on the Marketplace yet, so install it from this repo. You need Node and VS Code's `code` command.
+
+```bash
+git clone https://github.com/speys-app/speys-vscode.git
+cd speys-vscode
+npm run package
+code --install-extension speys-tools.vsix
+```
+
+Then run **Developer: Reload Window**.
+
 ## Repo switcher
 
 In a multi-root workspace, press **Cmd+E** (**Ctrl+Alt+E** on Windows and Linux) or the project name at the left of the status bar, and pick a project:
