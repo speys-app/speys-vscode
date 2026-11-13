@@ -1,7 +1,14 @@
 {
   "command.pick": "Proje Değiştir",
+  "command.sessions": "Claude Oturumları",
   "command.addToClaude": "Claude'a ekle",
   "command.openInBrowser": "Tarayıcıda aç",
-  "config.addRoot": "**Klasör ekle…** listesinin arandığı klasör. Boşsa workspace dosyasının bir üstü.",
-  "config.browser": "**Tarayıcıda aç**'ın kullandığı macOS uygulamasının adı. Boşsa dosya varsayılan uygulamasında açılır (PDF → Önizleme). Diğer sistemlerde hep varsayılan uygulama kullanılır."
+  "config.addRoot": "**Klasör ekle…** listesinin arandığı klasör. Boşsa workspace dosyasının bulunduğu klasör.",
+  "config.browser": "**Tarayıcıda aç**'ın kullandığı macOS uygulamasının adı. Boşsa dosya varsayılan uygulamasında açılır (PDF → Önizleme). Diğer sistemlerde hep varsayılan uygulama kullanılır.",
+  "config.claudeCodeCss": "Claude Code paneline eklenen CSS kuralları, her öğe bir kural. `{{pill+pillOn}}`, Claude Code'da `pillOn` da olan modülün `pill` sınıfı demek; güncelleme sınıf adlarını değiştirse de kural çalışır. Değişikliği görmek için pencereyi yenile.",
+  "command.tab": "Sekme değiştir",
+  "config.shortcuts": "**Kısayollar** sekmesine sabitlenen komutların listesi. Her birinin `label` ve `command` alanı vardır (isteğe bağlı `args`). Sekmeden eklenir ya da buradan düzenlenir.",
+  "command.nextSession": "Yandaki Oturumu Aç",
+  "config.sessionLocation": "**Claude Oturumları** sekmesinden seçilen oturumun açıldığı yer: `sidebar` Claude Code'un yan panelindeki oturumun yerine geçer, `editor` editör sekmesi açar.",
+  "command.nextClaudeSession": "Sonraki Claude Oturumu"
 }

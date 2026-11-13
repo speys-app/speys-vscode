@@ -1,7 +1,14 @@
 {
   "command.pick": "Switch Project",
+  "command.sessions": "Claude Sessions",
   "command.addToClaude": "Add to Claude",
   "command.openInBrowser": "Open in Browser",
-  "config.addRoot": "Folder that **Add folder…** looks in. When empty, the folder above the workspace file.",
-  "config.browser": "macOS app name that **Open in Browser** uses. When empty, the file opens in its default app (PDF → Preview). Other systems always use the default app."
+  "config.addRoot": "Folder that **Add folder…** looks in. When empty, the folder the workspace file is in.",
+  "config.browser": "macOS app name that **Open in Browser** uses. When empty, the file opens in its default app (PDF → Preview). Other systems always use the default app.",
+  "config.claudeCodeCss": "CSS rules added to Claude Code's panel, one rule per item. `{{pill+pillOn}}` stands for the `pill` class of the Claude Code module that also has `pillOn`, so a rule keeps working when an update changes the class names. Reload the window to see a change.",
+  "command.tab": "Switch Tab",
+  "config.shortcuts": "A list of commands pinned in the **Shortcuts** tab. Each has a `label` and a `command` (and optional `args`). Add them from the tab itself or edit here.",
+  "command.nextSession": "Open Neighbor Session",
+  "config.sessionLocation": "Where a session picked in the **Claude Sessions** tab opens: `sidebar` replaces the session in Claude Code's side panel, `editor` opens an editor tab.",
+  "command.nextClaudeSession": "Next Claude Session"
 }

@@ -1,7 +1,7 @@
 {
   "name": "tools",
   "displayName": "Speys Tools",
-  "description": "Repo switcher for multi-root workspaces, add files to Claude Code, open HTML and PDF files in your browser.",
+  "description": "Repo switcher, Claude sessions and pinned shortcuts in one list for multi-root workspaces, add files to Claude Code, open HTML and PDF files in your browser.",
   "publisher": "speys",
   "version": "0.6.0",
   "license": "MIT",
@@ -50,6 +50,27 @@
         "icon": "$(repo)"
       },
       {
+        "command": "speysTools.sessions",
+        "title": "%command.sessions%",
+        "category": "Speys Tools",
+        "icon": "$(comment-discussion)"
+      },
+      {
+        "command": "speysTools.tab",
+        "title": "%command.tab%",
+        "category": "Speys Tools"
+      },
+      {
+        "command": "speysTools.nextClaudeSession",
+        "title": "%command.nextClaudeSession%",
+        "category": "Speys Tools"
+      },
+      {
+        "command": "speysTools.nextSession",
+        "title": "%command.nextSession%",
+        "category": "Speys Tools"
+      },
+      {
         "command": "speysTools.addToClaude",
         "title": "%command.addToClaude%",
         "category": "Speys Tools",
@@ -83,6 +104,14 @@
         {
           "command": "speysTools.openInBrowser",
           "when": "resourceExtname =~ /^\\.(html?|pdf)$/i"
+        },
+        {
+          "command": "speysTools.tab",
+          "when": "false"
+        },
+        {
+          "command": "speysTools.nextSession",
+          "when": "false"
         }
       ],
       "editor/title": [
@@ -105,6 +134,59 @@
           "type": "string",
           "default": "Google Chrome",
           "markdownDescription": "%config.browser%"
+        },
+        "speysTools.claudeCodeCss": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "%config.claudeCodeCss%"
+        },
+        "speysTools.shortcuts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "command": {
+                "type": "string"
+              },
+              "args": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "label",
+              "command"
+            ]
+          },
+          "default": [
+            {
+              "label": "Reload Window",
+              "command": "workbench.action.reloadWindow"
+            },
+            {
+              "label": "Toggle Terminal",
+              "command": "workbench.action.terminal.toggleTerminal"
+            },
+            {
+              "label": "Open Settings",
+              "command": "workbench.action.openSettings"
+            }
+          ],
+          "markdownDescription": "%config.shortcuts%"
+        },
+        "speysTools.sessionLocation": {
+          "type": "string",
+          "enum": [
+            "sidebar",
+            "editor"
+          ],
+          "default": "sidebar",
+          "markdownDescription": "%config.sessionLocation%"
         }
       }
     },
@@ -112,7 +194,44 @@
       {
         "command": "speysTools.pick",
         "mac": "cmd+e",
-        "key": "ctrl+alt+e"
+        "key": "ctrl+alt+e",
+        "when": "(activeWebviewPanelId != 'claudeVSCodePanel' || panelFocus) && (!claude-vscode.sideBarActive || !auxiliaryBarFocus) && focusedView != 'claudeVSCodeSidebar'"
+      },
+      {
+        "command": "speysTools.tab",
+        "args": 1,
+        "mac": "cmd+1",
+        "key": "ctrl+alt+1"
+      },
+      {
+        "command": "speysTools.tab",
+        "args": 2,
+        "mac": "cmd+2",
+        "key": "ctrl+alt+2"
+      },
+      {
+        "command": "speysTools.tab",
+        "args": 3,
+        "mac": "cmd+3",
+        "key": "ctrl+alt+3"
+      },
+      {
+        "command": "speysTools.nextSession",
+        "args": 1,
+        "key": "tab",
+        "when": "inQuickOpen && speysTools.sessionsTab"
+      },
+      {
+        "command": "speysTools.nextSession",
+        "args": -1,
+        "key": "shift+tab",
+        "when": "inQuickOpen && speysTools.sessionsTab"
+      },
+      {
+        "command": "speysTools.nextClaudeSession",
+        "mac": "cmd+e",
+        "key": "ctrl+alt+e",
+        "when": "(activeWebviewPanelId == 'claudeVSCodePanel' && !panelFocus) || (claude-vscode.sideBarActive && auxiliaryBarFocus) || focusedView == 'claudeVSCodeSidebar'"
       }
     ]
   }
